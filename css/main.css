@@ -702,11 +702,26 @@ a:hover {
   background-color: #4bcaff;
 }
 
+.container {
+  overflow: hidden;
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+@media (min-width: 576px) {
+  .flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: calc(100% / 3 - 23px);
   margin: 10px;
 }
 .card:hover .hover-box {
@@ -738,6 +753,8 @@ a:hover {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  width: 2px;
+  height: 17px;
 }
 .card .plus::before {
   content: "";
@@ -751,9 +768,23 @@ a:hover {
   width: 17px;
   height: 2px;
 }
-.card .plus::after {
-  width: 2px;
-  height: 17px;
+.card img {
+  display: block;
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .card {
+    width: calc(50% - 20px);
+  }
+}
+@media (min-width: 768px) {
+  .card {
+    width: calc(33.33% - 20px);
+  }
+}
+.card .head {
+  text-align: left;
+  padding: 0 0 10px 10px;
 }
 
 .card-title {
@@ -764,26 +795,6 @@ a:hover {
   font-weight: normal;
   text-transform: uppercase;
   transition: 1s linear;
-  width: 100%;
-}
-
-.card img {
-  display: block;
-  width: 100%;
-}
-
-.container {
-  overflow: hidden;
-  position: relative;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding-top: 40px;
-}
-
-.flex {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   width: 100%;
 }
 
@@ -822,4 +833,19 @@ a:hover {
   display: inline-block;
   vertical-align: top;
   font-size: 30px;
+}
+@media (min-width: 1024px) {
+  .head h1 {
+    border-width: 0 0 0 10px;
+    font-size: 36px;
+    padding: 0 0 0 10px;
+    border-left: 8px solid #4e5a62;
+  }
+}
+@media (min-width: 1200px) {
+  .head h1 {
+    border-width: 0 0 0 10px;
+    font-size: 36px;
+    padding: 0 0 0 10px;
+  }
 }
